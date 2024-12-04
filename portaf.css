@@ -1,0 +1,263 @@
+/* Configuració global */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Animació #home */
+@keyframes anim {
+  0%, 100% { background-color: #5100ff; }
+  25%, 75% { background-color: #ae00ff; }
+  50% { background-color: #3d044e; }
+}
+#home {
+  animation: anim 5s infinite;
+  color: white;
+  text-align: center;
+  padding: 190px 20px;
+  border-radius: 0 0 50px 50px;
+}
+#home h1 { font-size: 4em; margin-bottom: 20px; }
+#home p { font-size: 1.5em; }
+
+/* Estils imatges, header, footer */
+img {
+  height: 200px;
+  display: block;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+header, footer {
+  background: #281d44;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Navegació */
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+nav ul li a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav ul li a:hover { color: #5100ff; }
+
+nav img {
+  width: 30px; 
+  height: auto; 
+  margin-right: 10px; 
+}
+
+
+/* Seccions generals */
+section {
+  padding: 40px 20px;
+  margin: 20px 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  margin-bottom: 40px;
+  position: relative;
+  font-size: 2em;
+  color: #2a1553;
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  animation: glow 3s infinite alternate;
+}
+@keyframes glow {
+  0%, 50%, 100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(0, 0, 255, 0.7), 0 0 50px rgba(0, 0, 255, 1);
+  }
+}
+
+/* Projectes */
+#projects {
+  display: flex; 
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+
+#projects {
+  display: block; 
+}
+
+.project {
+  width: 48%; /* Amplada inicial dels projectes */
+}
+
+.projecte2 {
+  margin-left: auto; 
+}
+
+.projects-container {
+  display: flex; 
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  gap: 20px;
+}
+
+/* Estils generals per a h3, enllaços i imatges dels projectes */
+.projecte1 h3, .projecte2 h3 {
+  color: #001aff;
+  font-size: 1.5em;
+}
+
+.projecte1 a, .projecte2 a {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #5100ff;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.projecte1 a:hover, .projecte2 a:hover {
+  background-color: #5100ff;
+}
+
+.projecte1 img, .projecte2 img {
+  max-width: 100%;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estils específics per al text del projecte */
+.project p {
+  font-size: 1.2em; 
+  margin-bottom: 20px;
+}
+
+/* Responsivitat: fer que els projectes ocupin el 100% de l'amplada en pantalles més petites */
+@media (max-width: 768px) {
+  .project {
+    width: 100%;
+  }
+}
+
+/* Formulari de contacte */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact h2 {
+  text-align: center; 
+  margin-bottom: 40px; 
+  width: 100%; 
+  display: block; 
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+  max-width: 800px; 
+}
+
+#contact-form {
+  flex: 1; 
+  max-width: 500px; 
+  margin-left: 20px; 
+  background: #ecf0f1;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; 
+}
+
+#contact-form input, 
+#contact-form textarea, 
+#contact-form button {
+  width: 100%; 
+  padding: 12px; 
+  margin-top: 10px; 
+  border-radius: 5px; 
+}
+
+#contact-form button {
+  background-color: #5100ff; 
+  color: white; 
+  border: none; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+
+#contact-form button:hover {
+  background-color: #3700cc; 
+}
+
+.AlbertImage {
+  flex: 1; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.AlbertImage img {
+  max-width: 200px; 
+  border-radius: 50%; 
+}
+
+/* Botó veure projectes */
+.view-projects-btn {
+  background-color: #5100ff;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.view-projects-btn:hover { transform: scale(1.05); }
+
+/* Graella habilitats */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.tech-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+/* Responsivitat */
+@media (max-width: 768px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Portafoli Web Developer</title>
+  <link rel="stylesheet" href="portaf.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="scrollToSection('about')">Sobre Mi</a></li>
+        <li><a href="#" onclick="scrollToSection('projects')">Projectes</a></li>
+        <li><a href="#" onclick="scrollToSection('contact')">Contacte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- Pàgina d'Inici -->
+<section id="home">
+  <div class="intro">
+    <h1>Albert, Desenvolupador Web</h1>
+    <p>Especialitzat en la creació de pàgines web modernes i eficients.</p>
+    <button class="view-projects-btn" onclick="scrollToSection('projects')">Veure Projectes</button>
+    <a href="Albert Roig Magriñá (DAW2T).pdf" download="Albert Roig Magriñá (DAW2T).pdf">
+      <button class="view-projects-btn">Descargar currículum ⬇</button>
+    </a>
+  </div>
+</section>
+
+
+<!-- Sobre mi -->
+<section id="about">
+  <h2>Sobre Mi</h2>
+  <p>Hola! em presento, soc Albert Roig Magriñá nascut a Reus, un 11 de juny de 2004.</p>
+  <p>Desenvolupador web amb coneixaments en HTML, CSS, JavaScript i Php. M'encanta crear aplicacions web que siguin ràpides i intuïtives.</p>
+  <br>
+  <h3>Llenguatges especialitzats</h3>
+  <div class="skills-grid">
+    <div class="skill-item">
+      <img src="img/html5.png" alt="HTML5" class="tech-icon">
+      <p>HTML5</p>
+    </div>
+    <div class="skill-item">
+      <img src="img/css3.png" alt="CSS3" class="tech-icon">
+      <p>CSS3</p>
+    </div>
+    <div class="skill-item">
+      <img src="img/js.png" alt="JavaScript" class="tech-icon">
+      <p>JavaScript</p>
+    </div>
+    <div class="skill-item">
+      <img src="img/php.png" alt="Php" class="tech-icon">
+      <p>Php</p>
+    </div>
+    <div class="skill-item">
+      <img src="img/java.png" alt="Java.js" class="tech-icon">
+      <p>Java.js</p>
+    </div>
+    <div class="skill-item">
+      <img src="img/mongo.png" alt="MongoDB" class="tech-icon">
+      <p>MongoDB</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Projectes -->
+<section id="projects">
+  <h2>Projectes</h2>
+
+  <div class="projects-container">
+
+    <div class="project projecte1">
+      <h3>Projecte 1: Web Responsive, Cat Galery</h3>
+      <p>Una pàgina web completament responsiva amb HTML i CSS.</p>
+      <p>Aquesta pàgina web està dedicada a la informació sobre els diferents tipus de gats.</p>
+      <a href="https://github.com/albert234567/accesiblee" target="_blank">Veure projecte a GitHub</a>
+      <img src="img/Cat Galery.png" alt="Cat Galery">
+    </div>
+
+    <div class="project projecte2">
+      <h3>Projecte 2: Web Funcional, El problema dels tres cossos</h3>
+      <p>Una pàgina web amb HTML i CSS per mostrar relats.</p>
+      <p>Es necessitava una web per explicar històries que molts no havien escoltat.</p>
+      <a href="https://github.com/albert234567/examenUF3" target="_blank">Veure projecte a GitHub</a>
+      <img src="img/cosos.png" alt="cosos">
+    </div>
+  </div>
+
+</section>
+
+<!-- Contacte -->
+<section id="contact">
+  <h2>Contacta'm</h2>
+  <div class="contact-content">
+      <div class="AlbertImage">
+        <img src="img/memoji.png" alt="AlbertImage">
+      </div>
+      <form id="contact-form">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Correu electrònic</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Missatge</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Enviar</button>
+      </form>
+  </div>
+</section>
+<footer>
+    <p>&copy; 2024 Albert. Tots els drets reservats.</p>
+  </footer>
+
+  <script src="portaf.js"></script>
+</body>
+</html>
+
