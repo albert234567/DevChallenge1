@@ -8,22 +8,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Animació #home */
-@keyframes anim {
-  0%, 100% { background-color: #5100ff; }
-  25%, 75% { background-color: #ae00ff; }
-  50% { background-color: #3d044e; }
-}
-#home {
-  animation: anim 5s infinite;
-  color: white;
-  text-align: center;
-  padding: 190px 20px;
-  border-radius: 0 0 50px 50px;
-}
-#home h1 { font-size: 4em; margin-bottom: 20px; }
-#home p { font-size: 1.5em; }
-
 /* Estils imatges, header, footer */
 img {
   height: 200px;
@@ -62,6 +46,38 @@ nav img {
   margin-right: 10px; 
 }
 
+/* Pàgina d'Inici (Home) */
+@keyframes anim {
+  0%, 100% { background-color: #5100ff; }
+  25%, 75% { background-color: #ae00ff; }
+  50% { background-color: #3d044e; }
+}
+#home {
+  animation: anim 5s infinite;
+  color: white;
+  text-align: center;
+  padding: 190px 20px;
+  border-radius: 0 0 50px 50px;
+}
+#home h1 { font-size: 4em; margin-bottom: 20px; }
+#home p { font-size: 1.5em; }
+
+.highlight {
+  color: #5100ff; /* Canvia aquest valor pel color que vulguis */
+  font-weight: bold; /* Pots afegir un estil extra si vols */
+}
+
+.highlight2 {
+  color: #ae00ff; /* Canvia aquest valor pel color que vulguis */
+  font-weight: bold; /* Pots afegir un estil extra si vols */
+}
+
+.highlight3 {
+  color: #33004a; /* Canvia aquest valor pel color que vulguis */
+  font-weight: bold; /* Pots afegir un estil extra si vols */
+  font-size: 1.5em; /* Augmentar el tamany del text */
+
+}
 
 /* Seccions generals */
 section {
@@ -71,6 +87,7 @@ section {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
 h2 {
   margin-bottom: 40px;
   position: relative;
@@ -81,71 +98,65 @@ h2 {
   background-color: white;
   animation: glow 3s infinite alternate;
 }
+
 @keyframes glow {
   0%, 50%, 100% {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(0, 0, 255, 0.7), 0 0 50px rgba(0, 0, 255, 1);
   }
 }
 
+/* Estils generals per a la secció "Sobre mi" */
+#about {
+  background-color: #f4f4f9;
+  padding: 40px;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+#about p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #333;
+}
+
+#about h3 {
+  font-size: 1.5em;
+  margin-top: 30px;
+  color: #222;
+  text-align: center;
+  font-weight: bold;
+}
+
+
 /* Projectes */
 #projects {
   display: flex; 
   justify-content: space-between;
   flex-wrap: wrap; 
+  max-width: 1200px;
+  align-items: center;
   gap: 20px; 
+  text-align: center;
+  margin: 0 auto;
+  
+}
+
+.projecte1 a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5100ff;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  margin: 10px;
 }
 
 #projects {
   display: block; 
 }
 
-.project {
-  width: 48%; /* Amplada inicial dels projectes */
-}
-
-.projecte2 {
-  margin-left: auto; 
-}
-
-.projects-container {
-  display: flex; 
-  justify-content: space-between;
-  flex-wrap: wrap; 
-  gap: 20px;
-}
-
-/* Estils generals per a h3, enllaços i imatges dels projectes */
-.projecte1 h3, .projecte2 h3 {
-  color: #001aff;
-  font-size: 1.5em;
-}
-
-.projecte1 a, .projecte2 a {
-  display: inline-block;
-  padding: 8px 20px;
-  background-color: #5100ff;
-  color: white;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.projecte1 a:hover, .projecte2 a:hover {
-  background-color: #5100ff;
-}
-
-.projecte1 img, .projecte2 img {
-  max-width: 100%;
-  margin-top: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Estils específics per al text del projecte */
-.project p {
-  font-size: 1.2em; 
-  margin-bottom: 20px;
-}
 
 /* Responsivitat: fer que els projectes ocupin el 100% de l'amplada en pantalles més petites */
 @media (max-width: 768px) {
@@ -154,58 +165,11 @@ h2 {
   }
 }
 
-/* Formulari de contacte */
+/*Contacte */
 #contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#contact h2 {
-  text-align: center; 
-  margin-bottom: 40px; 
-  width: 100%; 
-  display: block; 
-}
-
-.contact-content {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  width: 100%; 
-  max-width: 800px; 
-}
-
-#contact-form {
-  flex: 1; 
-  max-width: 500px; 
-  margin-left: 20px; 
-  background: #ecf0f1;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column; 
-}
-
-#contact-form input, 
-#contact-form textarea, 
-#contact-form button {
-  width: 100%; 
-  padding: 12px; 
-  margin-top: 10px; 
-  border-radius: 5px; 
-}
-
-#contact-form button {
-  background-color: #5100ff; 
-  color: white; 
-  border: none; 
-  cursor: pointer; 
-  transition: background-color 0.3s; 
-}
-
-#contact-form button:hover {
-  background-color: #3700cc; 
 }
 
 .AlbertImage {
@@ -232,6 +196,7 @@ h2 {
   transition: background-color 0.3s, transform 0.3s;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .view-projects-btn:hover { transform: scale(1.05); }
 
 /* Graella habilitats */
@@ -240,6 +205,7 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
+
 .skill-item {
   display: flex;
   align-items: center;
@@ -247,6 +213,7 @@ h2 {
   flex-direction: column;
   text-align: center;
 }
+
 .tech-icon {
   width: 48px;
   height: 48px;
@@ -257,6 +224,7 @@ h2 {
 @media (max-width: 768px) {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 480px) {
   .skills-grid { grid-template-columns: 1fr; }
 }
