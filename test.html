@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Portafoli Web Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="scrollToSection('about')">Sobre Mi</a></li>
+        <li><a href="#" onclick="scrollToSection('projects')">Projectes</a></li>
+        <li><a href="#" onclick="scrollToSection('contact')">Contacte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- Pàgina d'Inici -->
+<section id="home">
+  <div class="intro">
+    <h1>Albert, Desenvolupador Web</h1>
+    <p>Especialitzat en la creació de pàgines web modernes i eficients.</p>
+    <button class="view-projects-btn" onclick="scrollToSection('projects')">Veure Projectes</button>
+    <a href="Albert Roig Magriñá (DAW2T).pdf" download="Albert Roig Magriñá (DAW2T).pdf">
+      <button class="view-projects-btn">Descargar currículum ⬇</button>
+    </a>
+  </div>
+</section>
+
+
+<!-- Sobre mi -->
+<section id="about">
+  <p><span class="highlight3">Hola!</span> em presento, soc <span class="highlight">Albert Roig Magriñá</span>, nascut a Reus el dia 11 de juny de 2004.</p>
+  <p>Sóc un desenvolupador web amb coneixaments en <span class="highlight2">HTML, CSS, JavaScript i Php</span>, em dedico a crear aplicacions web que siguin ràpides i intuïtives.</p>
+
+  <h3>Habilitats</h3>
+  <br>
+  <div class="skills-grid">
+    <div class="skill-item">
+      <img src="img/html-5.svg" alt="HTML5" class="tech-icon">
+      <p>HTML5</p>
+    </div>
+    <div class="skill-item">
+      <img src="img/css-3.svg" alt="CSS3" class="tech-icon">
+      <p>CSS3</p>
+    </div>
+    <div class="skill-item">
+        <img src="img/javascript-js.svg" alt="JavaScript" class="tech-icon">
+        <p>JavaScript</p>
+    </div>
+
+    <div class="skill-item">
+      <img src="img/php.svg" alt="Php" class="tech-icon">
+      <p>Php</p>
+    </div>
+    <div class="skill-item">
+      <img src="img/java-original-wordmark.svg" alt="Java" class="tech-icon">
+      <p>Java.js</p>
+    </div>
+    <div class="skill-item">
+      <img src="img/python.svg" alt="Python" class="tech-icon">
+      <p>Python</p>
+    </div>
+
+    <div class="skill-item">
+        <img src="img/laravel.svg" alt="Laravel" class="tech-icon">
+        <p>Laravel</p>
+    </div>
+    <div class="skill-item">
+      <img src="img/sqlite.svg" alt="SQLite" class="tech-icon">
+      <p>SQLite</p>
+    </div>
+    <div class="skill-item">
+        <img src="img/mysql-original-wordmark.svg" alt="MySQL" class="tech-icon">
+        <p>MySQL</p>
+    </div>
+
+    <div class="skill-item">
+        <img src="img/git.svg" alt="Git" class="tech-icon">
+        <p>Git</p>
+    </div>
+    <div class="skill-item">
+      <img src="img/visual-studio-code.svg" alt="VisualStudio" class="tech-icon">
+      <p>Visual Studio</p>
+    </div>
+    <div class="skill-item">
+        <img src="img/github.svg" alt="github" class="tech-icon">
+        <p>Github</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Projectes -->
+<section id="projects">
+  <h2>Projectes</h2>
+  <BR>
+  <!-- Enllaços dels projectes -->
+  <div class="project-buttons">
+    <button class="project-btn" data-project="devchallenge2">DevChallenge2: Login Oauth2</button>
+    <button class="project-btn" data-project="devchallenge3">DevChallenge3: Llista de la compra</button>
+    <button class="project-btn" data-project="devchallenge4">DevChallenge4: Demanar cita</button>
+    <button class="project-btn" data-project="devchallenge5">DevChallenge5: Joc de cartes</button>
+  </div>
+
+  <div class="project-content" id="devchallenge2" data-img="dev/DevChallenge2.png" data-text="Un sistema de Login amb Oauth2. Permet autenticar-se amb serveis externs." data-github="https://github.com/albert234567/DevChallenge2.git" data-live="https://live-url-devchallenge2.com"></div>
+
+  <div class="project-content" id="devchallenge3" data-img="dev/DevChallenge3.png" data-text="Una aplicació de llista de la compra que permet afegir i eliminar productes." data-github="https://github.com/albert234567/DevChallenge3.git" data-live="https://live-url-devchallenge3.com"></div>
+
+  <div class="project-content" id="devchallenge4" data-img="dev/DevChallenge4.png" data-text="Sistema per demanar cita, amb validació de dates i horaris." data-github="https://github.com/albert234567/DevChallenge4.git" data-live="https://live-url-devchallenge4.com"></div>
+
+  <div class="project-content" id="devchallenge5" data-img="dev/DevChallenge5.png" data-text="Joc de cartes en línia on els jugadors competeixen per guanyar." data-github="https://github.com/albert234567/DevChallenge5.git" data-live="https://live-url-devchallenge5.com"></div>
+
+</section>
+
+
+<!-- Contacte -->
+<section id="contact">
+  <h3>Contacta'm</h3>
+  <div class="skill-item">
+    <img src="img/gmail.svg" alt="Mail" class="tech-icon" onclick="copyGmail()">
+  </div>
+  <div id="copyMessage" class="copy-message">Gmail copiat!</div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Albert. Tots els drets reservats.</p>
+</footer>
+</body>
+</html>
