@@ -144,6 +144,16 @@ section {
   margin-left: 180px; 
 }
 
+.filter-btn {
+  align-items: center;
+  max-width: 90px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #5f007c;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 5px;
+}
 .project-btn {
   align-items: center;
   max-width: 250px;

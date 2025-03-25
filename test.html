@@ -100,7 +100,16 @@
 <!-- Projectes -->
 <section id="projects">
   <h2>Projectes</h2>
-  <BR>
+  <br>
+
+  <!-- Botons de filtre -->
+  <div class="filter-buttons">
+    <button class="filter-btn" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="autenticacio">Auth</button>
+    <button class="filter-btn" data-filter="gestio-dades">Dades</button>
+    <button class="filter-btn" data-filter="multijugador">Multi</button>
+  </div>
+
   <!-- Enllaços dels projectes -->
   <div class="project-buttons">
     <button class="project-btn" data-project="devchallenge2">DevChallenge2: Login Oauth2</button>
@@ -109,13 +118,14 @@
     <button class="project-btn" data-project="devchallenge5">DevChallenge5: Joc de cartes</button>
   </div>
 
-  <div class="project-content" id="devchallenge2" data-img="dev/DevChallenge2.png" data-text="Un sistema de Login amb Oauth2. Permet autenticar-se amb serveis externs." data-github="https://github.com/albert234567/DevChallenge2.git" data-live="https://live-url-devchallenge2.com"></div>
+  <!-- Contingut dels projectes -->
+  <div class="project-content autenticacio" id="devchallenge2" data-img="dev/DevChallenge2.png" data-text="Un sistema de Login amb Oauth2. Permet autenticar-se amb serveis externs." data-github="https://github.com/albert234567/DevChallenge2.git" data-live="https://live-url-devchallenge2.com"></div>
 
-  <div class="project-content" id="devchallenge3" data-img="dev/DevChallenge3.png" data-text="Una aplicació de llista de la compra que permet afegir i eliminar productes." data-github="https://github.com/albert234567/DevChallenge3.git" data-live="https://live-url-devchallenge3.com"></div>
+  <div class="project-content autenticacio gestio-dades" id="devchallenge3" data-img="dev/DevChallenge3.png" data-text="Una aplicació de llista de la compra que permet afegir i eliminar productes." data-github="https://github.com/albert234567/DevChallenge3.git" data-live="https://live-url-devchallenge3.com"></div>
 
-  <div class="project-content" id="devchallenge4" data-img="dev/DevChallenge4.png" data-text="Sistema per demanar cita, amb validació de dates i horaris." data-github="https://github.com/albert234567/DevChallenge4.git" data-live="https://live-url-devchallenge4.com"></div>
+  <div class="project-content gestio-dades" id="devchallenge4" data-img="dev/DevChallenge4.png" data-text="Sistema per demanar cita, amb validació de dates i horaris." data-github="https://github.com/albert234567/DevChallenge4.git" data-live="https://live-url-devchallenge4.com"></div>
 
-  <div class="project-content" id="devchallenge5" data-img="dev/DevChallenge5.png" data-text="Joc de cartes en línia on els jugadors competeixen per guanyar." data-github="https://github.com/albert234567/DevChallenge5.git" data-live="https://live-url-devchallenge5.com"></div>
+  <div class="project-content multijugador" id="devchallenge5" data-img="dev/DevChallenge5.png" data-text="Joc de cartes en línia on els jugadors competeixen per guanyar." data-github="https://github.com/albert234567/DevChallenge5.git" data-live="https://live-url-devchallenge5.com"></div>
 
 </section>
 

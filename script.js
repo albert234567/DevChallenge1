@@ -1,47 +1,14 @@
 // Funció per fer scroll a una secció
 function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
-
-// Funció per mostrar el projecte seleccionat
-function showProject(projectId) {
-  // Amaga tots els continguts dels projectes
-  const projects = document.querySelectorAll('.project-content');
-  projects.forEach(project => {
-    project.style.display = 'none';
-  });
-
-  // Mostra el projecte seleccionat
-  const selectedProject = document.getElementById(projectId);
-  if (selectedProject) {
-    selectedProject.style.display = 'block';
-  }
+  const section = document.getElementById(sectionId);
+  section.scrollIntoView({ behavior: 'smooth' });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Inicialment mostra el primer projecte (devchallenge2)
-  showProject('devchallenge2');
-
-  // Gestionar els clics en els botons
-  const buttons = document.querySelectorAll('.project-btn');
-  buttons.forEach(button => {
-    button.addEventListener('click', function() {
-      const project = this.getAttribute('data-project');
-      showProject(project);
-    });
-  });
-});
-
 // Funció per mostrar el projecte seleccionat
 function showProject(projectId) {
-  // Amaga tots els continguts dels projectes
   const projects = document.querySelectorAll('.project-content');
-  projects.forEach(project => {
-    project.style.display = 'none';
-  });
+  projects.forEach(project => (project.style.display = 'none'));
 
-  // Mostra el projecte seleccionat
   const selectedProject = document.getElementById(projectId);
   if (selectedProject) {
     // Generar dinàmicament el contingut del projecte
@@ -50,15 +17,10 @@ function showProject(projectId) {
     const githubUrl = selectedProject.getAttribute('data-github');
     const liveUrl = selectedProject.getAttribute('data-live');
 
-    // Afegir el contingut generat
     selectedProject.innerHTML = `
       <div class="project-info">
         <img src="${imgSrc}" alt="${projectId}" class="project-image">
-
-        <div class="project-text">
-          <p>${text}</p>
-        </div>
-
+        <div class="project-text"><p>${text}</p></div>
         <div class="project-buttons-container">
           <a href="${githubUrl}" target="_blank" class="project-btn-2">GitHub</a>
           <a href="${liveUrl}" target="_blank" class="project-btn-2">Live</a>
@@ -70,37 +32,54 @@ function showProject(projectId) {
   }
 }
 
+// Funció per copiar el correu
+function copyGmail() {
+  const gmail = "albertroiggg@gmail.com";
+  navigator.clipboard.writeText(gmail).then(() => {
+    document.getElementById("copyMessage").style.display = "block";
+  }).catch(err => console.error("Error en copiar: ", err));
+}
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.project-btn');
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.project-btn');
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projects = document.querySelectorAll('.project-content');
 
-        // Selecciona el primer botó per defecte
-        if (buttons.length > 0) {
-          buttons[0].classList.add('active');
-          console.log("Projecte seleccionat per defecte:", buttons[0].getAttribute('data-project'));
-        }
-    
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Obté el projecte seleccionat des de l'atribut data-project
-        const selectedProject = button.getAttribute('data-project');
-        console.log("Projecte seleccionat:", selectedProject);
-        
-        // Opcional: marca visualment el botó actiu
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-      });
+  // Mostrar i ocultar cada projecte una vegada per assegurar la seva càrrega
+  projects.forEach(project => {
+    showProject(project.id); // Obre el projecte
+    project.style.display = "none"; // L'amaga després de carregar-lo
+  });
+
+  // Un cop carregats, mostrar tots els projectes per defecte
+  projects.forEach(project => (project.style.display = "block"));
+
+  // Selecciona el primer botó per defecte
+  if (buttons.length > 0) {
+    buttons[0].classList.add('active');
+    showProject(buttons[0].getAttribute('data-project'));
+  }
+
+  // Gestionar els clics en els botons de projecte
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const selectedProject = this.getAttribute('data-project');
+      showProject(selectedProject);
+
+      // Marca visualment el botó actiu
+      buttons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
     });
   });
 
+  // Filtratge de projectes
+  filterButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const filter = this.getAttribute("data-filter");
 
-    function copyGmail() {
-      const gmail = "albertroiggg@gmail.com";
-      navigator.clipboard.writeText(gmail).then(() => {
-        // Mostra el missatge
-        const copyMessage = document.getElementById("copyMessage");
-        copyMessage.style.display = "block";
-        
-      }).catch(err => console.error("Error en copiar: ", err));
-    }
-  
+      projects.forEach(project => {
+        project.style.display = (filter === "all" || project.classList.contains(filter)) ? "block" : "none";
+      });
+    });
+  });
+});
